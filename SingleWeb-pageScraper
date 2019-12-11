@@ -1,0 +1,13 @@
+This program downloads all data from a webpage.
+
+from bs4 import BeautifulSoup
+import requests
+#using request we direct teh program to grab all text data from the website
+source = requests.get('https://gotmead.com/blog/').text
+
+#this puts all data into a variable
+soup = BeautifulSoup(source,'lxml')
+
+
+#this prnints out the data and prettify makes it readable
+print(soup.prettify())
